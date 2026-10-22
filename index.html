@@ -1,41 +1,154 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mi portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ana Pérez — Audiovisual designer & illustrator</title>
+  <meta name="description" content="Portfolio de Ana Pérez, diseñadora audiovisual e ilustradora." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-  <header>
-    <nav>
-      <a href="#inicio">Home</a>
-      <a href="#proyectos">Proyectos</a>
-      <a href="#contacto">Contacto</a>
+  <!-- HEADER -->
+  <header class="header">
+    <a href="#top" class="logo">Ana Pérez</a>
+
+    <nav class="nav" id="nav">
+      <div class="nav__main">
+        <a href="#top" class="roll" data-text="Home"><span>Home</span></a>
+        <a href="#works" class="roll" data-text="Work"><span>Work</span></a>
+        <a href="#about" class="roll" data-text="About"><span>About</span></a>
+      </div>
+      <a href="#contact" class="nav__contact roll" data-text="Contact me"><span>Contact me</span></a>
     </nav>
+
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menú">Menu</button>
   </header>
 
-  <main>
-    <section id="inicio">
-      <h1>Prueba de sincronización</h1>
-      <p>Aquí va una breve presentación tuya.</p>
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero">
+      <p class="hero__location">Based in Madrid</p>
+
+      <div class="hero__content">
+        <div class="hero__title">
+          <svg class="hero__star" viewBox="0 0 342.09 272.6" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path fill="#01E842" d="M176.56,271.46c-3.36,2.34-6.63.99-6.81-3.21-.75-20.58,9.35-65.53-1.11-82.9-5.16-8.57-28.27-9.28-37.34-8.64-39.47,2.81-79.46,19.6-117.3,25.7-5.13.83-17.24,3.97-13.19-5.2,22.29-13.17,43.22-28.61,65.96-41.03,14.47-7.9,60.71-26.7,66.24-40.76s-1.35-23.9-6.4-36.04c-4.72-11.36-9.31-22.74-15.65-33.35-4.01-6.72-25.91-34.97-24.07-40.65,1.66-2.64,4.52-3.25,6.83-1.13,11.84,10.47,23.4,21.36,35.59,31.43s44.53,38.08,56.68,42.32c21.95,7.65,31.44-6.86,47.07-17.52,22.47-15.33,45.22-29.01,66.2-46.8,2.94-2.5,13.28-15.15,16.52-13.53,2.7,1.35,2.49,5.68.88,7.94-21.16,31.21-51.8,58.81-71.28,90.71-7.54,12.35-18.17,29.33-4.06,40.89,25.51,20.89,69.63,26.15,97.17,44.83,4.66,3.16,5.28,8.62-1.06,8.14-6.52-.49-16.04-3.75-23.28-4.8-15.97-2.33-31.79-2.94-47.84-4.16-17.86-1.36-32.99-5.22-50.89,2.15-12.68,5.23-10.85,10.71-16.09,20.91-1.88,3.66-5.01,7.61-6.72,11.28-7.78,16.62-10.3,36.06-16.06,53.43Z"/>
+          </svg>
+          <h1 class="hero__wordmark">anapérez</h1>
+        </div>
+        <p class="hero__tagline">
+          Audiovisual designer and illustrator exploring visual identities, moving images, and bold ideas through experimental design and storytelling.
+        </p>
+      </div>
     </section>
 
-    <section id="proyectos">
-      <h2>Proyectos</h2>
-      <p>Aquí irán tus trabajos.</p>
+    <!-- WORKS -->
+    <section class="works" id="works">
+      <a href="#" class="project">
+        <div class="project__img"><span>Imagen 1</span></div>
+        <div class="project__info">
+          <h3>Proyecto Uno</h3>
+          <p>Estrategia de marca, Dirección creativa</p>
+        </div>
+      </a>
+
+      <a href="#" class="project">
+        <div class="project__img"><span>Imagen 2</span></div>
+        <div class="project__info">
+          <h3>Proyecto Dos</h3>
+          <p>Identidad visual, Aplicaciones de marca</p>
+        </div>
+      </a>
+
+      <a href="#" class="project">
+        <div class="project__img"><span>Imagen 3</span></div>
+        <div class="project__info">
+          <h3>Proyecto Tres</h3>
+          <p>Dirección creativa, Identidad visual</p>
+        </div>
+      </a>
+
+      <a href="#" class="project">
+        <div class="project__img"><span>Imagen 4</span></div>
+        <div class="project__info">
+          <h3>Proyecto Cuatro</h3>
+          <p>Diseño de landing page, Identidad visual</p>
+        </div>
+      </a>
     </section>
 
-    <section id="contacto">
-      <h2>Contacto</h2>
-      <p>tuemail@ejemplo.com</p>
+    <!-- ABOUT -->
+    <section class="about" id="about">
+      <h2 class="section-label">About</h2>
+      <div class="about__text">
+        <p>Me especializo en identidad de marca y dirección creativa, construyendo sistemas visuales que responden a retos reales de negocio.</p>
+        <p>Esa dirección se extiende al diseño digital y a la dirección de arte de campañas, cuidando que cada pieza sirva a la misma idea.</p>
+      </div>
     </section>
+
+    <!-- CAPABILITIES -->
+    <section class="capabilities">
+      <div class="capabilities__head">
+        <h2 class="section-label">Capabilities</h2>
+        <p>Servicios digitales completos: diseño, branding y soluciones web de alto rendimiento.</p>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <h3>Branding</h3>
+          <p>Branding estratégico que aporta claridad, coherencia y una identidad visual sólida.</p>
+          <ul class="tags">
+            <li>Identidad de marca</li>
+            <li>Análisis de competencia</li>
+            <li>Guías de marca</li>
+            <li>Estrategia visual</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Web design</h3>
+          <p>Llevar la identidad de marca al entorno digital: landings y motion fieles a la marca.</p>
+          <ul class="tags">
+            <li>UX / UI</li>
+            <li>Tipografía</li>
+            <li>Landing pages</li>
+            <li>Motion design</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- CLIENTS (marquee) -->
+    <section class="clients">
+      <h2 class="section-label">Clients</h2>
+      <div class="marquee">
+        <div class="marquee__track">
+          <span>Cliente 1</span><span>Cliente 2</span><span>Cliente 3</span><span>Cliente 4</span>
+          <!-- duplicado para el bucle infinito -->
+          <span>Cliente 1</span><span>Cliente 2</span><span>Cliente 3</span><span>Cliente 4</span>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <footer>
-    <p>© 2026 Ana Pérez</p>
+  <!-- FOOTER / CONTACT -->
+  <footer class="footer" id="contact">
+    <div class="footer__links">
+      <a href="https://instagram.com" target="_blank" rel="noopener" class="roll" data-text="Instagram"><span>Instagram</span></a>
+      <a href="https://behance.net" target="_blank" rel="noopener" class="roll" data-text="Behance"><span>Behance</span></a>
+      <a href="https://linkedin.com" target="_blank" rel="noopener" class="roll" data-text="LinkedIn"><span>LinkedIn</span></a>
+      <a href="mailto:hola@tudominio.com" class="roll" data-text="Mail"><span>Mail</span></a>
+    </div>
+    <p class="footer__wordmark">TU NOMBRE</p>
+    <p class="footer__legal">© 2026 Tu Nombre. Todos los derechos reservados.</p>
   </footer>
 
+  <script src="js/script.js"></script>
 </body>
 </html>
