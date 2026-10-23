@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ana Pérez — Audiovisual designer & illustrator</title>
-  <meta name="description" content="Portfolio de Ana Pérez, diseñadora audiovisual e ilustradora." />
+  <meta name="description" content="Portfolio of Ana Pérez, audiovisual designer and illustrator." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -25,13 +26,13 @@
       <a href="#contact" class="nav__contact roll" data-text="Contact me"><span>Contact me</span></a>
     </nav>
 
-    <button class="menu-btn" id="menuBtn" aria-label="Abrir menú">Menu</button>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">Menu</button>
   </header>
 
-  <main id="top">
+  <main>
 
     <!-- HERO -->
-    <section class="hero">
+    <section class="hero" id="top">
       <p class="hero__location">Based in Madrid</p>
 
       <div class="hero__content">
@@ -50,75 +51,137 @@
     <!-- WORKS -->
     <section class="works" id="works">
       <a href="#" class="project">
-        <div class="project__img"><span>Imagen 1</span></div>
+        <div class="project__img"><span>Image 1</span></div>
         <div class="project__info">
-          <h3>Proyecto Uno</h3>
-          <p>Estrategia de marca, Dirección creativa</p>
+          <h3>Project One</h3>
+          <p>Brand strategy, Creative direction</p>
         </div>
       </a>
 
       <a href="#" class="project">
-        <div class="project__img"><span>Imagen 2</span></div>
+        <div class="project__img"><span>Image 2</span></div>
         <div class="project__info">
-          <h3>Proyecto Dos</h3>
-          <p>Identidad visual, Aplicaciones de marca</p>
+          <h3>Project Two</h3>
+          <p>Visual identity, Brand applications</p>
         </div>
       </a>
 
       <a href="#" class="project">
-        <div class="project__img"><span>Imagen 3</span></div>
+        <div class="project__img"><span>Image 3</span></div>
         <div class="project__info">
-          <h3>Proyecto Tres</h3>
-          <p>Dirección creativa, Identidad visual</p>
+          <h3>Project Three</h3>
+          <p>Creative direction, Visual identity</p>
         </div>
       </a>
 
       <a href="#" class="project">
-        <div class="project__img"><span>Imagen 4</span></div>
+        <div class="project__img"><span>Image 4</span></div>
         <div class="project__info">
-          <h3>Proyecto Cuatro</h3>
-          <p>Diseño de landing page, Identidad visual</p>
+          <h3>Project Four</h3>
+          <p>Landing page design, Visual identity</p>
         </div>
       </a>
     </section>
 
     <!-- ABOUT -->
     <section class="about" id="about">
-      <h2 class="section-label">About</h2>
-      <div class="about__text">
-        <p>Me especializo en identidad de marca y dirección creativa, construyendo sistemas visuales que responden a retos reales de negocio.</p>
-        <p>Esa dirección se extiende al diseño digital y a la dirección de arte de campañas, cuidando que cada pieza sirva a la misma idea.</p>
+      <div class="about__box">
+        <h2 class="about__label">About me</h2>
+        <div class="about__text">
+          <p>Hi! I’m Ana Pérez Asensio, a 22-year-old audiovisual designer and illustrator with a passion for branding, video editing and visual storytelling. I’m drawn to the process of turning ideas into visual concepts, building identities with character and creating images that communicate beyond words.</p>
+          <p>I enjoy experimenting with analog and digital techniques, mixing different materials, textures and tools to discover unexpected results. Always curious and eager to learn, I’m inspired by new creative approaches and love bringing a personal touch to every project I work on.</p>
+        </div>
       </div>
     </section>
 
     <!-- CAPABILITIES -->
-    <section class="capabilities">
-      <div class="capabilities__head">
-        <h2 class="section-label">Capabilities</h2>
-        <p>Servicios digitales completos: diseño, branding y soluciones web de alto rendimiento.</p>
+    <section class="cap" id="capabilities">
+      <div class="cap__intro">
+        <h2 class="cap__label">Capabilities</h2>
+        <p class="cap__text">
+          Creative solutions across branding, visual identity, illustration, motion graphics, and video editing, combining digital tools and AI to bring ideas to life.
+        </p>
+        <ul class="tools" aria-label="Tools">
+          <li title="Photoshop">
+            <svg viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Photoshop">
+              <rect x="0.248003" y="0.248003" width="24.3043" height="24.3043" rx="4.09206" stroke="currentColor" stroke-width="0.496007"/>
+              <path d="M8.65962 6.58301C11.9017 6.58301 13.727 8.10075 13.727 10.6446C13.727 13.6127 11.2528 14.8071 8.93354 14.8071H7.36415V18.0155H4.18945V6.58301H8.65962ZM7.36415 9.2952V12.0927H8.7629C9.73507 12.0927 10.4176 11.6998 10.4176 10.7097C10.4176 9.80485 9.83835 9.29295 8.83026 9.29295H7.3619L7.36415 9.2952Z" fill="currentColor"/>
+              <path d="M14.3737 17.4519L14.3917 14.8071C15.2965 15.4043 16.5583 15.7793 17.4294 15.7793C18.0266 15.7793 18.3005 15.6086 18.3005 15.3011C18.3005 14.9598 17.9256 14.8228 17.2094 14.6006C15.8263 14.1919 14.3086 13.6284 14.3086 11.8188C14.3086 10.0091 15.8263 8.95166 18.0289 8.95166C19.0706 8.95166 19.9238 9.10433 20.6737 9.42989L20.6557 11.9557C20.0585 11.5965 18.882 11.2732 18.1142 11.2732C17.5506 11.2732 17.3284 11.4438 17.3284 11.6998C17.3284 12.0074 17.6023 12.0927 18.4195 12.3486C20.0069 12.8269 21.3383 13.3388 21.3383 15.1978C21.3383 17.0568 19.8879 18.1659 17.618 18.1659C16.4236 18.1659 15.2965 17.9616 14.3759 17.4497L14.3737 17.4519Z" fill="currentColor"/>
+            </svg>
+          </li>
+          <li title="InDesign">
+            <svg viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="InDesign">
+              <rect x="0.248003" y="0.248003" width="24.3043" height="24.3043" rx="4.09206" stroke="currentColor" stroke-width="0.496007"/>
+              <path d="M5.97852 6.58301H9.15321V18.0155H5.97852V6.58301Z" fill="currentColor"/>
+              <path d="M10.2373 13.6125C10.2373 10.5075 12.5588 8.95378 14.9634 8.95378C15.2867 8.95378 15.628 8.98746 15.8346 9.02114V6.22363H18.8207V17.4339C18.1044 17.7931 16.6877 18.168 15.152 18.168C12.5252 18.168 10.2373 16.684 10.2373 13.6125ZM15.8323 15.6759V11.4953C15.628 11.428 15.372 11.3763 15.0308 11.3763C14.0923 11.3763 13.2212 11.9219 13.2212 13.5609C13.2212 15.0629 14.007 15.7455 15.0465 15.7455C15.2845 15.7455 15.61 15.7275 15.8323 15.6781V15.6759Z" fill="currentColor"/>
+            </svg>
+          </li>
+          <li title="Illustrator">
+            <svg viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Illustrator">
+              <rect x="0.248003" y="0.248003" width="24.3043" height="24.3043" rx="4.09206" stroke="currentColor" stroke-width="0.496007"/>
+              <path d="M8.39517 6.58301H12.0458L16.1411 18.0155H12.7957L12.2322 16.2755H7.95063L7.38708 18.0155H4.17871L8.39293 6.58301H8.39517ZM11.3453 13.5611L10.0993 9.72178L8.85319 13.5611H11.3453Z" fill="currentColor"/>
+              <path d="M16.6309 7.33295C16.6309 6.51346 17.2618 5.98584 18.2182 5.98584C19.1747 5.98584 19.7539 6.53142 19.7539 7.33295C19.7539 8.13448 19.1567 8.71599 18.2182 8.71599C17.2281 8.71599 16.6309 8.17041 16.6309 7.33295ZM16.7162 9.1089H19.7023V18.0156H16.7162V9.1089Z" fill="currentColor"/>
+            </svg>
+          </li>
+          <li title="After Effects">
+            <svg viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="After Effects">
+              <rect x="0.248003" y="0.248003" width="24.3043" height="24.3043" rx="4.09206" stroke="currentColor" stroke-width="0.496007"/>
+              <path d="M6.34019 6.58301H9.99087L14.0861 18.0155H10.743L10.1795 16.2755H5.89789L5.33435 18.0155H2.12598L6.34019 6.58301ZM9.29037 13.5611L8.04429 9.72178L6.79821 13.5611H9.29037Z" fill="currentColor"/>
+              <path d="M22.6762 13.3051C22.6762 13.7137 22.6425 14.1583 22.5909 14.4995H17.0116C17.3528 15.3527 18.1723 15.7613 19.4521 15.7613C20.3726 15.7613 21.1764 15.5907 21.9779 15.2157L22.0116 17.5867C21.1405 18.0312 20.202 18.1839 18.9918 18.1839C16.0057 18.1839 14.0098 16.5292 14.0098 13.5251C14.0098 10.777 15.9204 8.95166 18.4463 8.95166C20.9721 8.95166 22.6784 10.6243 22.6784 13.3028L22.6762 13.3051ZM16.9105 12.5552H19.8966C19.8293 11.7537 19.3331 11.1901 18.4642 11.1901C17.5953 11.1901 17.0991 11.6347 16.9105 12.5552Z" fill="currentColor"/>
+            </svg>
+          </li>
+          <li title="Audition">
+            <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Audition">
+              <rect x="0.259078" y="0.259078" width="25.3897" height="25.3897" rx="4.27479" stroke="currentColor" stroke-width="0.518156"/>
+              <path d="M9.91252 14.7141H5.9426L5.13281 17.2343C5.12422 17.2797 5.09895 17.3202 5.06198 17.3479C5.025 17.3756 4.979 17.3884 4.93303 17.3839H2.92243C2.80278 17.3839 2.77287 17.3241 2.80278 17.1937L6.24281 7.3138C6.27213 7.19517 6.30779 7.0782 6.34964 6.96339C6.40472 6.74058 6.43482 6.51233 6.43938 6.28286C6.43695 6.25534 6.44527 6.22795 6.4626 6.20644C6.47993 6.18493 6.50492 6.17096 6.53232 6.16748H9.3025C9.37301 6.16748 9.43284 6.19739 9.44246 6.25722L13.3226 17.2172C13.3525 17.3369 13.3226 17.3871 13.2158 17.3871H10.9819C10.944 17.3906 10.9061 17.3804 10.875 17.3585C10.8438 17.3366 10.8215 17.3043 10.8121 17.2674L9.91252 14.7141ZM6.56224 12.5871H9.27259C9.21276 12.367 9.12302 12.0967 9.0226 11.8168C8.92218 11.5369 8.83244 11.2164 8.73308 10.897C8.63373 10.5775 8.53331 10.2474 8.42327 9.91732C8.31323 9.58721 8.22349 9.27632 8.13375 8.96757C8.04401 8.65883 7.9735 8.38747 7.89338 8.13748H7.87308C7.77656 8.60339 7.6564 9.06408 7.51305 9.51776C7.3528 10.0274 7.19255 10.5679 7.02269 11.0978C6.89574 11.6024 6.74204 12.0999 6.56224 12.5881V12.5871Z" fill="currentColor"/>
+              <path d="M21.512 8.96792V15.5179C21.512 15.8074 21.512 16.0574 21.5216 16.2881C21.5312 16.5189 21.5419 16.708 21.5515 16.8778C21.5611 17.0477 21.5814 17.1481 21.5911 17.2582C21.6007 17.3682 21.5611 17.3981 21.4714 17.3981H19.6424C19.6005 17.4035 19.558 17.3946 19.5218 17.3729C19.4855 17.3512 19.4577 17.3179 19.4426 17.2785L19.3828 17.0082C19.3662 16.9361 19.3593 16.862 19.3625 16.7881C19.0148 17.0978 18.6008 17.3237 18.1521 17.4483C17.7648 17.5568 17.3642 17.6108 16.962 17.6086C16.5679 17.615 16.1755 17.5543 15.8018 17.4291C15.4553 17.3088 15.143 17.1064 14.8916 16.8394C14.6146 16.5433 14.4092 16.1877 14.2912 15.7999C14.1398 15.3077 14.0677 14.7945 14.0775 14.2797V8.97753C14.0751 8.9613 14.076 8.94474 14.0801 8.92885C14.0842 8.91296 14.0914 8.89805 14.1014 8.88501C14.1113 8.87196 14.1238 8.86105 14.1381 8.8529C14.1523 8.84475 14.168 8.83954 14.1843 8.83758H16.2622C16.2785 8.83534 16.295 8.83637 16.3108 8.84061C16.3266 8.84485 16.3415 8.85221 16.3544 8.86227C16.3673 8.87232 16.3781 8.88486 16.3862 8.89915C16.3942 8.91345 16.3993 8.9292 16.4011 8.94548V13.9955C16.4011 14.4655 16.5079 14.8352 16.7109 15.1055C16.9139 15.3758 17.3306 15.5157 17.8113 15.5157C18.0592 15.5174 18.3054 15.4739 18.5378 15.3875C18.7775 15.3052 19.0033 15.1871 19.2076 15.0371V8.96792C19.2076 8.89741 19.2578 8.84826 19.3572 8.84826H21.3977C21.4254 8.84459 21.4535 8.85192 21.4758 8.8687C21.4982 8.88548 21.5131 8.91036 21.5173 8.938C21.5143 8.94231 21.5123 8.94721 21.5114 8.95237C21.5105 8.95754 21.5107 8.96284 21.512 8.96792V8.96792Z" fill="currentColor"/>
+            </svg>
+          </li>
+          <li title="Figma">
+            <svg viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Figma">
+              <rect x="0.259677" y="0.259078" width="25.3897" height="25.3897" rx="4.27479" stroke="currentColor" stroke-width="0.518156"/>
+              <path d="M10.2168 4.13379H15.8997C17.6643 4.13379 19.0963 5.56581 19.0963 7.33046C19.0963 8.56708 18.3931 9.64031 17.365 10.1719C18.3931 10.7035 19.0963 11.7767 19.0963 13.0133C19.0963 14.778 17.6643 16.21 15.8997 16.21C14.8959 16.21 13.9997 15.7466 13.4135 15.0223V18.6963C13.4135 20.4609 11.9815 21.8929 10.2168 21.8929C8.45216 21.8929 7.02013 20.4609 7.02013 18.6963C7.02013 17.4596 7.72338 16.3864 8.75154 15.8548C7.72338 15.3232 7.02013 14.25 7.02013 13.0133C7.02013 11.7767 7.72338 10.7035 8.75152 10.1719C7.72338 9.64031 7.02013 8.56708 7.02013 7.33046C7.02013 5.56581 8.45216 4.13379 10.2168 4.13379ZM7.7305 7.33046C7.7305 5.95813 8.84448 4.84415 10.2168 4.84415H12.703V9.81667H10.2168L10.2091 9.81668C8.8403 9.81252 7.7305 8.7002 7.7305 7.33046ZM12.7031 12.9795C12.703 12.9908 12.703 13.0021 12.703 13.0133C12.703 13.0246 12.703 13.0359 12.7031 13.0471V15.4996H10.2168C8.84448 15.4996 7.7305 14.3857 7.7305 13.0133C7.7305 11.6436 8.84035 10.5312 10.2092 10.527L10.2168 10.5271H12.703L12.7031 12.9795ZM13.4135 13.0431V12.9836C13.4294 11.6283 14.5317 10.5325 15.8895 10.5271H15.8997C15.9022 10.5271 15.9048 10.5271 15.9073 10.527C17.2761 10.5312 18.386 11.6436 18.386 13.0133C18.386 14.3857 17.272 15.4996 15.8997 15.4996C14.5373 15.4996 13.4295 14.4017 13.4135 13.0431ZM13.8909 10.5271C13.7155 10.669 13.5554 10.829 13.4135 11.0044V10.5271H13.8909ZM15.9074 9.81668C15.9048 9.81667 15.9022 9.81667 15.8997 9.81667C15.8958 9.81667 15.8919 9.81668 15.888 9.81669H13.4135V4.84415H15.8997C17.272 4.84415 18.386 5.95813 18.386 7.33046C18.386 8.7002 17.2762 9.81252 15.9074 9.81668ZM10.2168 16.21C8.84448 16.21 7.7305 17.3239 7.7305 18.6963C7.7305 20.0686 8.84448 21.1826 10.2168 21.1826C11.5892 21.1826 12.7031 20.0686 12.7031 18.6963V16.21H10.2168Z" fill-rule="evenodd" clip-rule="evenodd" fill="currentColor"/>
+            </svg>
+          </li>
+        </ul>
       </div>
 
-      <div class="cards">
-        <article class="card">
-          <h3>Branding</h3>
-          <p>Branding estratégico que aporta claridad, coherencia y una identidad visual sólida.</p>
-          <ul class="tags">
-            <li>Identidad de marca</li>
-            <li>Análisis de competencia</li>
-            <li>Guías de marca</li>
-            <li>Estrategia visual</li>
-          </ul>
+      <div class="services">
+        <article class="service">
+          <h3 class="service__title">Branding<br>&amp; Identity</h3>
+          <div class="service__body">
+            <p class="service__desc">Building distinctive brands through strategic research, visual storytelling, and cohesive identity systems, from the initial concept to the final applications.</p>
+            <ul class="service__tags">
+            <li>Market research</li>
+            <li>Art direction</li>
+            <li>Visual identity</li>
+            <li>Design systems</li>
+            </ul>
+          </div>
         </article>
-
-        <article class="card">
-          <h3>Web design</h3>
-          <p>Llevar la identidad de marca al entorno digital: landings y motion fieles a la marca.</p>
-          <ul class="tags">
-            <li>UX / UI</li>
-            <li>Tipografía</li>
-            <li>Landing pages</li>
-            <li>Motion design</li>
-          </ul>
+        <article class="service">
+          <h3 class="service__title">Audiovisual<br>&amp; Motion</h3>
+          <div class="service__body">
+            <p class="service__desc">Creating engaging audiovisual experiences through filming, video editing, and motion graphics, blending image, sound, and movement to communicate ideas with impact.</p>
+            <ul class="service__tags">
+            <li>Video editing</li>
+            <li>Filming</li>
+            <li>Motion graphics</li>
+            <li>Sound design</li>
+            </ul>
+          </div>
+        </article>
+        <article class="service">
+          <h3 class="service__title">Graphic<br>Design</h3>
+          <div class="service__body">
+            <p class="service__desc">Communicating ideas through expressive visuals, combining graphic design, editorial layouts, and analog and digital illustration across different formats.</p>
+            <ul class="service__tags">
+            <li>Illustration</li>
+            <li>UX/UI design</li>
+            <li>Editorial design</li>
+            <li>Analog techniques</li>
+            </ul>
+          </div>
         </article>
       </div>
     </section>
@@ -128,9 +191,9 @@
       <h2 class="section-label">Clients</h2>
       <div class="marquee">
         <div class="marquee__track">
-          <span>Cliente 1</span><span>Cliente 2</span><span>Cliente 3</span><span>Cliente 4</span>
-          <!-- duplicado para el bucle infinito -->
-          <span>Cliente 1</span><span>Cliente 2</span><span>Cliente 3</span><span>Cliente 4</span>
+          <span>Client 1</span><span>Client 2</span><span>Client 3</span><span>Client 4</span>
+          <!-- duplicate for the infinite loop -->
+          <span>Client 1</span><span>Client 2</span><span>Client 3</span><span>Client 4</span>
         </div>
       </div>
     </section>
@@ -145,8 +208,8 @@
       <a href="https://linkedin.com" target="_blank" rel="noopener" class="roll" data-text="LinkedIn"><span>LinkedIn</span></a>
       <a href="mailto:hola@tudominio.com" class="roll" data-text="Mail"><span>Mail</span></a>
     </div>
-    <p class="footer__wordmark">TU NOMBRE</p>
-    <p class="footer__legal">© 2026 Tu Nombre. Todos los derechos reservados.</p>
+    <p class="footer__wordmark">ANA PÉREZ</p>
+    <p class="footer__legal">© 2026 Ana Pérez. All rights reserved.</p>
   </footer>
 
   <script src="js/script.js"></script>

@@ -5,7 +5,7 @@ document.querySelectorAll(".roll").forEach((link) => {
   link.textContent = "";
 
   [...text].forEach((char, i) => {
-    const visible = char === " " ? " " : char;
+    const visible = char === " " ? " " : char;
 
     const charBox = document.createElement("span");
     charBox.className = "slot-char";
@@ -30,7 +30,15 @@ const nav = document.getElementById("nav");
 menuBtn.setAttribute("aria-expanded", "false");
 menuBtn.setAttribute("aria-controls", "nav");
 
+const header = document.querySelector(".header");
+let menuTimer;
+
 function setMenu(open) {
+  // Mientras el menú móvil está abierto (y mientras se cierra) no se aplica el modo de fusión
+  clearTimeout(menuTimer);
+  if (open) header.classList.add("menu-on");
+  else menuTimer = setTimeout(() => header.classList.remove("menu-on"), 520);
+
   nav.classList.toggle("open", open);
   document.body.classList.toggle("no-scroll", open);   // bloquea el scroll de fondo
   menuBtn.textContent = open ? "Close" : "Menu";
@@ -39,9 +47,19 @@ function setMenu(open) {
 
 menuBtn.addEventListener("click", () => setMenu(!nav.classList.contains("open")));
 
-// Cierra el menú al pulsar un enlace
+// Al pulsar una categoría: se pone verde y, un instante después, se cierra el menú
 nav.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", () => setMenu(false));
+  link.addEventListener("click", () => {
+    if (!nav.classList.contains("open")) return;   // en escritorio no hace falta
+
+    link.classList.add("is-selected");
+    document.body.classList.remove("no-scroll");   // permite que la página se desplace a la sección
+
+    setTimeout(() => {
+      setMenu(false);
+      link.classList.remove("is-selected");
+    }, 450);
+  });
 });
 
 // Cierra con Escape
@@ -55,7 +73,7 @@ window.matchMedia("(min-width: 801px)").addEventListener("change", (e) => {
 });
 
 // Aparición suave al hacer scroll
-const items = document.querySelectorAll(".project, .card, .about__text p");
+const items = document.querySelectorAll(".service, .cap__intro, .about__text p");
 items.forEach((el) => {
   el.style.opacity = 0;
   el.style.transform = "translateY(24px)";
@@ -74,24 +92,33 @@ const observer = new IntersectionObserver((entries) => {
 
 items.forEach((el) => observer.observe(el));
 
-// Estrella: se desplaza e inclina con el ratón (efecto de profundidad)
-const hero = document.querySelector(".hero");
-const star = document.querySelector(".hero__star");
-const mouseOk = window.matchMedia("(hover: hover) and (prefers-reduced-motion: no-preference)");
+// Efecto cortina: guarda la altura de cada sección en --h (el CSS la usa para el sticky)
+document.querySelectorAll(".hero, .clients").forEach((el) => {
+  const setH = () => el.style.setProperty("--h", el.offsetHeight + "px");
+  setH();
+  new ResizeObserver(setH).observe(el);
+});
 
-if (hero && star && mouseOk.matches) {
-  const move = (x, y, r) => {
-    star.style.setProperty("--mx", `${x}px`);
-    star.style.setProperty("--my", `${y}px`);
-    star.style.setProperty("--mr", `${r}deg`);
-  };
-
-  hero.addEventListener("mousemove", (e) => {
-    const box = hero.getBoundingClientRect();
-    const x = (e.clientX - box.left) / box.width - 0.5;    // de -0.5 a 0.5
-    const y = (e.clientY - box.top) / box.height - 0.5;
-    move(-x * 40, -y * 40, x * 24);   // se aleja del cursor y se inclina
-  });
-
-  hero.addEventListener("mouseleave", () => move(0, 0, 0));
+// Enlaces internos: como las secciones son "sticky", el navegador no sabe a dónde ir.
+// Medimos su posición natural y hacemos el scroll nosotros.
+function naturalTop(el) {
+  const pos = el.style.position, top = el.style.top;
+  el.style.position = "relative";
+  el.style.top = "auto";
+  const y = el.getBoundingClientRect().top + window.scrollY;
+  el.style.position = pos;
+  el.style.top = top;
+  return y;
 }
+
+document.querySelectorAll('a[href^="#"]').forEach((a) => {
+  a.addEventListener("click", (e) => {
+    const id = a.getAttribute("href").slice(1);
+    if (!id) return;                       // enlaces "#" vacíos (proyectos de prueba)
+    const target = document.getElementById(id);
+    if (!target) return;
+    e.preventDefault();
+    const y = id === "top" ? 0 : naturalTop(target);
+    window.scrollTo({ top: y, behavior: "smooth" });
+  });
+});
