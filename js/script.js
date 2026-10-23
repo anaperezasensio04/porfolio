@@ -93,7 +93,7 @@ const observer = new IntersectionObserver((entries) => {
 items.forEach((el) => observer.observe(el));
 
 // Efecto cortina: guarda la altura de cada sección en --h (el CSS la usa para el sticky)
-document.querySelectorAll(".hero, .clients").forEach((el) => {
+document.querySelectorAll(".hero").forEach((el) => {
   const setH = () => el.style.setProperty("--h", el.offsetHeight + "px");
   setH();
   new ResizeObserver(setH).observe(el);

@@ -355,49 +355,77 @@ ul { list-style: none; }
   text-transform: uppercase;
 }
 
-/* ---------- Clients (marquee) ---------- */
-.clients { padding: 80px 0; border-top: 1px solid var(--line); }
-.clients .section-label { padding: 0 var(--gutter); margin-bottom: 32px; }
+/* ---------- Marquee ---------- */
 .marquee { overflow: hidden; }
 .marquee__track {
   display: flex;
   gap: 80px;
   width: max-content;
   animation: scroll 25s linear infinite;
+  will-change: transform;
 }
-.marquee__track span { font-size: clamp(28px, 4vw, 56px); font-weight: 500; letter-spacing: -0.03em; white-space: nowrap; }
-@keyframes scroll { to { transform: translateX(-50%); } }
+@keyframes scroll { to { transform: translate3d(-50%, 0, 0); } }
 .marquee:hover .marquee__track { animation-play-state: paused; }
 
-/* ---------- Footer ---------- */
+/* ---------- Footer / Contact ---------- */
 .footer {
   background: var(--bg);
   color: var(--text);
-  padding: 48px var(--gutter) 24px;
+  padding: clamp(48px, 6vw, 120px) 0 0;
   border-top: 1px solid var(--line);
 }
-.footer__links { display: flex; gap: 32px; flex-wrap: wrap; margin-bottom: 80px; }
-.footer__wordmark {
-  font-size: clamp(40px, 13.5vw, 280px);   /* antes se salía de la pantalla */
-  font-weight: 600;
-  letter-spacing: -0.05em;
-  line-height: .85;
-  white-space: nowrap;
+
+/* Wordmark + estrella en bucle */
+.marquee--brand .marquee__track {
+  gap: 0;                                  /* el espacio va en cada imagen para que el bucle encaje exacto */
+  animation-duration: 45s;                 /* más lento: las imágenes son muy grandes */
 }
-.footer__legal { margin-top: 32px; font-size: 13px; opacity: .6; }
+.marquee--brand img {
+  display: block;
+  flex: none;
+  width: min(84vw, 1700px);
+  height: auto;
+  margin-right: clamp(16px, 1.5vw, 28px);
+}
+
+/* Parte de abajo: izquierda vacía · derecha enlaces con línea vertical */
+.footer__bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: clamp(260px, 34vw, 640px);
+}
+.footer__links {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: clamp(24px, 3vw, 56px) var(--gutter);
+  border-left: 1px solid rgba(255, 255, 255, .55);   /* línea vertical */
+  font-size: clamp(1.6rem, 2.6vw, 3rem);             /* mismo tamaño que los títulos de servicios (BRANDING...) */
+  font-weight: 500;
+  line-height: 1.15;
+}
+.footer__legal {
+  grid-column: 1;
+  grid-row: 1;
+  align-self: end;
+  padding: var(--gutter);
+  font-size: 13px;
+  opacity: .6;
+}
 
 /* ---------- Efecto "cortina" (parallax) ----------
-   Solo en dos sitios: Work tapa al Hero y el footer tapa a Clients.
-   About, Capabilities y los proyectos van sin efecto.
+  Work tapa al Hero; About, Capabilities y proyectos van sin efecto.
    El JS (script.js) guarda en --h la altura de la sección. */
 main { display: contents; }   /* así las secciones comparten contenedor con el footer */
-.hero, .clients {
+.hero {
   position: sticky;
   top: 0;
   top: min(0px, calc(100svh - var(--h, 100svh)));
 }
-.hero, .clients, .cap { background: var(--bg); }   /* fondo opaco: tapan lo que hay detrás */
-.works, .about, .cap, .footer { position: relative; }   /* quedan por encima del hero y de clients */
+.hero, .cap { background: var(--bg); }   /* fondo opaco: tapan lo que hay detrás */
+.works, .about, .cap, .footer { position: relative; }   /* quedan por encima del hero */
 
 /* ---------- Responsive ---------- */
 /* Tablet y móvil */
@@ -467,9 +495,13 @@ main { display: contents; }   /* así las secciones comparten contenedor con el 
   .hero__tagline { max-width: 24em; text-indent: 2.5em; }
 }
 
+/* Footer en tablet y móvil: wordmark más grande */
+@media (max-width: 800px) {
+  .marquee--brand img { width: 140vw; }
+}
+
 /* Móviles pequeños */
 @media (max-width: 480px) {
-  .footer__links { gap: 20px 24px; margin-bottom: 56px; }
   .marquee__track { gap: 48px; }
 }
 
