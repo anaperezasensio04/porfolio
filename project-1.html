@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project One — Ana Pérez</title>
+  <meta name="description" content="Project One: Brand strategy, Creative direction. Project by Ana Pérez." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/transition.css" />
+  <link rel="stylesheet" href="css/project.css" />
+  <script src="js/transition.js"></script>
+</head>
+<body>
+
+  <!-- HEADER (igual que la home; los enlaces apuntan a index.html) -->
+  <header class="header">
+    <a href="index.html" class="logo">Ana Pérez</a>
+
+    <nav class="nav" id="nav">
+      <div class="nav__main">
+        <a href="index.html" class="roll" data-text="Home"><span>Home</span></a>
+        <a href="index.html#works" class="roll" data-text="Work"><span>Work</span></a>
+        <a href="index.html#about" class="roll" data-text="About"><span>About</span></a>
+      </div>
+      <a href="#contact" class="nav__contact roll" data-text="Contact me"><span>Contact me</span></a>
+    </nav>
+
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">Menu</button>
+  </header>
+
+  <main>
+
+    <!-- 1 · VÍDEO + TÍTULO -->
+    <section class="pj-hero">
+      <figure class="pj-media" data-label="Hero video">
+        <video src="media/project-1/hero.mp4" autoplay muted loop playsinline preload="metadata"></video>
+      </figure>
+      <h1 class="pj-hero__title">Project One</h1>
+    </section>
+
+    <!-- 2 · DESCRIPCIÓN -->
+    <section class="pj-info">
+      <h2 class="pj-info__label">Info</h2>
+      <div class="pj-info__body">
+        <div class="pj-info__text">
+          <p>Write here a short introduction to the project: the brief, the main idea and the result.</p>
+          <p>Add a second paragraph with the process, the techniques you used or what you learned.</p>
+        </div>
+        <dl class="pj-meta">
+          <div><dt>Year</dt><dd>2026</dd></div>
+          <div><dt>Project name</dt><dd>Project One</dd></div>
+          <div><dt>Services</dt><dd>Brand strategy, Creative direction</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- 3 · GALERÍA: vídeo · 2 imágenes · vídeo · 2 imágenes -->
+    <section class="pj-gallery">
+      <figure class="pj-media pj-media--full" data-label="Video 1">
+        <video src="media/project-1/video-1.mp4" autoplay muted loop playsinline preload="metadata"></video>
+      </figure>
+      <figure class="pj-media pj-media--a" data-label="Image 1">
+        <img src="media/project-1/image-1.jpg" alt="" loading="lazy" />
+      </figure>
+      <figure class="pj-media pj-media--b" data-label="Image 2">
+        <img src="media/project-1/image-2.jpg" alt="" loading="lazy" />
+      </figure>
+      <figure class="pj-media pj-media--full" data-label="Video 2">
+        <video src="media/project-1/video-2.mp4" autoplay muted loop playsinline preload="metadata"></video>
+      </figure>
+      <figure class="pj-media pj-media--a" data-label="Image 3">
+        <img src="media/project-1/image-3.jpg" alt="" loading="lazy" />
+      </figure>
+      <figure class="pj-media pj-media--b" data-label="Image 4">
+        <img src="media/project-1/image-4.jpg" alt="" loading="lazy" />
+      </figure>
+    </section>
+
+  </main>
+
+  <!-- FOOTER / CONTACT (igual que la home) -->
+  <footer class="footer" id="contact">
+    <div class="marquee marquee--brand" role="img" aria-label="Ana Pérez">
+      <div class="marquee__track">
+        <img src="marquee-anaperez.svg" alt="" />
+        <img src="marquee-anaperez.svg" alt="" />
+        <img src="marquee-anaperez.svg" alt="" />
+        <img src="marquee-anaperez.svg" alt="" />
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="footer__links">
+        <a href="https://www.instagram.com/bluelab.studioo?stkn=eDNiZ2hmcWo5M2tt&amp;utm_source=qr" target="_blank" rel="noopener" class="roll" data-text="Instagram"><span>Instagram</span></a>
+        <a href="https://www.tiktok.com/@anaa.peerezzz?_r=1&amp;_t=ZG-9A0M9eDlarZ" target="_blank" rel="noopener" class="roll" data-text="Tiktok"><span>Tiktok</span></a>
+        <a href="mailto:anaperezasensio04@gmail.com" class="roll" data-text="Mail"><span>Mail</span></a>
+      </div>
+      <p class="footer__legal">© 2026 Ana Pérez. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script src="js/project.js"></script>
+</body>
+</html>

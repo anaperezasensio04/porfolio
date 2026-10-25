@@ -1,0 +1,108 @@
+/* ============================================================
+   Subpáginas de proyecto (project-1.html ... project-4.html)
+   Se carga DESPUÉS de style.css. Usa las mismas variables.
+   ============================================================ */
+:root { --pj-h: max(45vw, 420px); }   /* altura de cada bloque de vídeo/imagen */
+
+/* Bloque de medios (vídeo o imagen): gris de prueba + etiqueta hasta que pongas el archivo */
+.pj-media {
+  position: relative;
+  overflow: hidden;
+  height: var(--pj-h);
+  background: #868686;
+}
+.pj-media::before {
+  content: attr(data-label);
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: rgba(255, 255, 255, .7);
+  font-size: var(--gray-size);
+}
+.pj-media video,
+.pj-media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 1 · Vídeo de cabecera con el título */
+/* Efecto cortina (parallax): el vídeo se queda quieto y la sección de info lo tapa al hacer scroll */
+.pj-hero {
+  position: sticky;
+  top: 0;
+  top: min(0px, calc(100svh - var(--pj-h)));   /* si el vídeo es más alto que la pantalla, se queda fijo por abajo */
+}
+.pj-info, .pj-gallery { position: relative; }   /* quedan por encima del vídeo */
+.pj-hero__title {
+  position: absolute;
+  z-index: 1;
+  left: var(--gutter);
+  bottom: clamp(40px, 5vw, 90px);   /* altura del título respecto al borde de abajo */
+  font-size: clamp(2rem, 4.6vw, 5.5rem);   /* tamaño del título */
+  font-weight: 400;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: #fff;
+}
+
+/* 2 · Info (fondo negro · mismo layout que el About verde de la home) */
+.pj-info {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);   /* etiqueta | texto */
+  column-gap: var(--gutter);
+  min-height: clamp(380px, 44vw, 860px);
+  padding: clamp(24px, 2.2vw, 44px);
+  background: var(--bg);
+  color: #fff;
+}
+.pj-info__label {
+  font-size: clamp(14px, 1.15vw, 18px);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.pj-info__text {
+  display: grid;
+  gap: 1.22em;                 /* una línea en blanco entre párrafos */
+  align-content: start;
+  padding-top: 1.2vw;
+  font-size: clamp(16px, 1.75vw, 28px);
+  font-weight: 400;            /* Montserrat Regular */
+  line-height: 1.22;
+  letter-spacing: -0.02em;
+}
+.pj-info__text p:first-child { text-indent: 2.2em; }   /* sangría solo en la primera línea del primer párrafo */
+
+/* Year · Project name / Services */
+.pj-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px 0;
+  margin-top: clamp(60px, 8vw, 140px);
+  font-size: clamp(11px, .9vw, 14px);
+  text-transform: uppercase;
+}
+.pj-meta dt { margin-bottom: 4px; font-weight: 700; color: var(--muted); }
+.pj-meta dd { font-weight: 400; }
+
+/* 3 · Galería: vídeo · 2 imágenes · vídeo · 2 imágenes (a sangre, sin huecos) */
+.pj-gallery { display: flex; flex-wrap: wrap; background: var(--bg); }
+.pj-gallery .pj-media { flex: 0 0 50%; }
+.pj-gallery .pj-media--full { flex-basis: 100%; }
+/* colores de prueba (se ven solo mientras no hay archivo) */
+.pj-media--full { background: #868686; }
+.pj-media--a { background: #dcdcdc; }
+.pj-media--b { background: #a1a1a1; }
+.pj-media--a::before, .pj-media--b::before { color: rgba(0, 0, 0, .5); }
+
+@media (max-width: 800px) {
+  :root { --pj-h: 70svh; }
+  .pj-info { grid-template-columns: 1fr; min-height: 0; row-gap: 28px; padding: 24px; }
+  .pj-info__text { padding-top: 0; font-size: clamp(17px, 5vw, 22px); }
+  .pj-meta { gap: 24px 16px; margin-top: 48px; }
+  .pj-gallery .pj-media { flex-basis: 100%; height: 110vw; }
+  .pj-gallery .pj-media--full { height: 62vw; }
+}

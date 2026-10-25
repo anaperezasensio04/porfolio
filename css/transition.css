@@ -1,0 +1,38 @@
+/* ============================================================
+   Transición entre páginas: un panel verde sube y tapa la página
+   que se va; en la página nueva el panel sigue subiendo y la deja ver.
+   Cámbialo con --pt-bg (color) y la duración/curva de las animaciones.
+   ============================================================ */
+:root { --pt-bg: #080808; }   /* mismo verde que la estrella */
+
+html::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;               /* por encima de la navbar */
+  background: var(--pt-bg);
+  transform: translateY(100%);
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Saliendo: el panel sube desde abajo y tapa la página */
+html.pt-leave { pointer-events: none; }
+html.pt-leave::after {
+  visibility: visible;
+  animation: pt-cover .6s cubic-bezier(.76, 0, .24, 1) forwards;
+}
+
+/* Entrando: la página nueva empieza tapada y el panel sigue subiendo hasta salir */
+html.pt-enter::after {
+  visibility: visible;
+  transform: translateY(0);
+  animation: pt-reveal .7s cubic-bezier(.76, 0, .24, 1) .05s forwards;
+}
+
+@keyframes pt-cover  { from { transform: translateY(100%); } to { transform: translateY(0); } }
+@keyframes pt-reveal { from { transform: translateY(0); }    to { transform: translateY(-100%); } }
+
+@media (prefers-reduced-motion: reduce) {
+  html::after { display: none; }
+}

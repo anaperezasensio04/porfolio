@@ -180,6 +180,7 @@ ul { list-style: none; }
   flex: 0 0 50%;
   display: block;
   min-height: var(--work-h);
+  padding-bottom: clamp(48px, 8vw, 120px);   /* margen inferior: los textos se paran antes del borde */
   overflow: clip;                         /* recorta el zoom del hover y NO rompe el sticky */
   color: #fff;
 }
