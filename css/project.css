@@ -4,21 +4,12 @@
    ============================================================ */
 :root { --pj-h: max(45vw, 420px); }   /* altura de cada bloque de vídeo/imagen */
 
-/* Bloque de medios (vídeo o imagen): gris de prueba + etiqueta hasta que pongas el archivo */
+/* Bloque de medios (vídeo o imagen) */
 .pj-media {
   position: relative;
   overflow: hidden;
   height: var(--pj-h);
-  background: #868686;
-}
-.pj-media::before {
-  content: attr(data-label);
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  color: rgba(255, 255, 255, .7);
-  font-size: var(--gray-size);
+  background: var(--bg);
 }
 .pj-media video,
 .pj-media img {
@@ -37,18 +28,6 @@
   top: min(0px, calc(100svh - var(--pj-h)));   /* si el vídeo es más alto que la pantalla, se queda fijo por abajo */
 }
 .pj-info, .pj-gallery { position: relative; }   /* quedan por encima del vídeo */
-.pj-hero__title {
-  position: absolute;
-  z-index: 1;
-  left: var(--gutter);
-  bottom: clamp(40px, 5vw, 90px);   /* altura del título respecto al borde de abajo */
-  font-size: clamp(2rem, 4.6vw, 5.5rem);   /* tamaño del título */
-  font-weight: 400;
-  letter-spacing: -0.03em;
-  line-height: 1;
-  color: #fff;
-}
-
 /* 2 · Info (fondo negro · mismo layout que el About verde de la home) */
 .pj-info {
   display: grid;
@@ -92,12 +71,6 @@
 .pj-gallery { display: flex; flex-wrap: wrap; background: var(--bg); }
 .pj-gallery .pj-media { flex: 0 0 50%; }
 .pj-gallery .pj-media--full { flex-basis: 100%; }
-/* colores de prueba (se ven solo mientras no hay archivo) */
-.pj-media--full { background: #868686; }
-.pj-media--a { background: #dcdcdc; }
-.pj-media--b { background: #a1a1a1; }
-.pj-media--a::before, .pj-media--b::before { color: rgba(0, 0, 0, .5); }
-
 @media (max-width: 800px) {
   :root { --pj-h: 70svh; }
   .pj-info { grid-template-columns: 1fr; min-height: 0; row-gap: 28px; padding: 24px; }

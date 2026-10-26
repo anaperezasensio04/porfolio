@@ -1,4 +1,43 @@
 // Subpáginas de proyecto: el texto de Info va apareciendo palabra a palabra al hacer scroll
+document.querySelectorAll(".pj-gallery video").forEach((video) => {
+  video.pause();
+
+  let isVisible = false;
+  let waitingForMetadata = false;
+
+  function playFromStart() {
+    waitingForMetadata = false;
+    if (!isVisible) return;
+
+    video.currentTime = 0;
+    video.play().catch((error) => {
+      if (error.name !== "AbortError") {
+        console.error("No se pudo reproducir el vídeo de la galería:", error);
+      }
+    });
+  }
+
+  const observer = new IntersectionObserver(([entry]) => {
+    isVisible = entry.isIntersecting;
+    if (entry.isIntersecting) {
+      if (video.readyState >= HTMLMediaElement.HAVE_METADATA) {
+        playFromStart();
+      } else if (!waitingForMetadata) {
+        waitingForMetadata = true;
+        video.addEventListener("loadedmetadata", playFromStart, { once: true });
+      }
+    } else {
+      if (waitingForMetadata) {
+        video.removeEventListener("loadedmetadata", playFromStart);
+      }
+      waitingForMetadata = false;
+      video.pause();
+    }
+  }, { threshold: 0.1 });
+
+  observer.observe(video);
+});
+
 (() => {
   const box = document.querySelector(".pj-info__text");
   if (!box) return;
