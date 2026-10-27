@@ -27,6 +27,15 @@
   top: 0;
   top: min(0px, calc(100svh - var(--pj-h)));   /* si el vídeo es más alto que la pantalla, se queda fijo por abajo */
 }
+.pj-lux-hero {
+  position: sticky;
+  top: min(0px, calc(100svh - var(--pj-h)));
+  height: var(--pj-h);
+}
+.pj-lux-hero__media {
+  width: 100%;
+  height: 100%;
+}
 .pj-info, .pj-gallery { position: relative; }   /* quedan por encima del vídeo */
 /* 2 · Info (fondo negro · mismo layout que el About verde de la home) */
 .pj-info {
