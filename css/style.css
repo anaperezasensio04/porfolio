@@ -195,13 +195,15 @@ ul { list-style: none; }
   place-items: center;
   color: rgba(255, 255, 255, .7);
 }
-.project__img img {
+.project__img img,
+.project__img video {
   width: 100%; height: 100%;
   object-fit: cover;
   object-position: center center;
   transition: transform .8s cubic-bezier(.2, .7, .2, 1);
 }
-.project:hover .project__img img { transform: scale(1.03); }
+.project:hover .project__img img,
+.project:hover .project__img video { transform: scale(1.03); }
 /* Colores de prueba (bórralos cuando pongas tus imágenes) */
 .project:nth-child(1) .project__img { background: #999999; }
 .project:nth-child(2) .project__img { background: #6f6e6b; }
